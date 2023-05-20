@@ -1,6 +1,6 @@
-# Streamlit demo APP for API services of IPL_data analysis
+# Streamlit demo APP for API services of IPL data analysis
 
-I have Created a demo APP for API services of IPL_data analysis using `streamlit`.
+I have created a demo APP for API services of IPL data analysis using `streamlit`.
 
 Showed which API services are available.
 

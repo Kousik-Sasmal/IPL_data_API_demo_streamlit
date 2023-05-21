@@ -2,14 +2,11 @@ import streamlit as st
 import analysis
 from analysis import df_ball,df_matches,ball_match
 
-st.set_page_config(page_title='IPL Analysis',layout='wide')
+st.set_page_config(page_title='IPL Analysis')
 st.title('IPL Data Analysis')
-st.markdown('This is a demo APP for API services of IPL data analysis')
+st.markdown('This is a demo APP for API services of IPL data (till 2022) analysis')
 
-
-
-st.sidebar.title('IPL Data Analysis')
-option = st.sidebar.selectbox('Select the API',['Overall teams','Overall bowlers','Overall batsmans',
+option = st.selectbox('Select the API',['Overall teams','Overall bowlers','Overall batsmans',
                                                 'Teamwise players','Overall winning details',
                                                 'Teamwise winning details','Team vs Team winning details',
                                                 'Bowler record','Batsman record','Team record'])
@@ -48,8 +45,8 @@ elif option=='Teamwise winning details':
 
 elif option=='Team vs Team winning details':
     st.header('Team vs Team winning details')
-    team1 = st.selectbox('Select the Team 1',list(set(df_ball['BattingTeam'])))
-    team2 = st.selectbox('Select the Team 2',list(set(df_ball['BattingTeam'])))
+    team1 = st.selectbox('Select Team 1',list(set(df_ball['BattingTeam'])))
+    team2 = st.selectbox('Select Team 2',list(set(df_ball['BattingTeam'])))
     response = analysis.team_vs_team(team1,team2)
     st.write(response)
 

@@ -1,4 +1,4 @@
-# Streamlit demo APP for API services of IPL data analysis
+# Streamlit demo APP for API services of IPL data (till 2022) analysis
 
 I have created a demo APP for API services of IPL data analysis using `streamlit`.
 

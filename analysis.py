@@ -257,15 +257,14 @@ def team_record(given_team):
 # API for top bowlers yearwise
 def top_bowler_yearwise(year: int, top_k: int = 1):
     """
-    Get the top bowlers and their total wickets for a given year.
-
+    Returns the top bowlers and their corresponding wickets in a given year.
+    
     Args:
-        year (int): The year for which to retrieve the data.
-        top_k (int, optional): The number of top bowlers to return. Defaults to 1.
-
+        year (int): The year for which the top bowlers are to be determined.
+        top_k (int, optional): The number of top bowlers to be returned. Defaults to 1.
+        
     Returns:
-        dict: A dictionary containing the top bowlers and their total wickets.
-            {'bowlers': [list of bowlers], 'total_wickets': [list of wickets]}
+        dict: A dictionary containing the top bowlers and their wickets.
     """
     temp_df = ball_match[
         (ball_match['Date'].dt.year == year) &
@@ -275,33 +274,36 @@ def top_bowler_yearwise(year: int, top_k: int = 1):
         (ball_match['kind'] != 'retired hurt') &
         (ball_match['kind'] != 'retired out')
     ]
-
+    
     top_bowler_group = temp_df.groupby('bowler')['isWicketDelivery']
     bowlers = list(top_bowler_group.sum().sort_values(ascending=False).index[:top_k])
     wickets = list(top_bowler_group.sum().sort_values(ascending=False).values[:top_k])
 
-    result = {bowlers[i]: str(wickets[i]) for i in range(len(bowlers))}
-    return result
+    result = [{bowlers[i]: str(wickets[i])} for i in range(len(bowlers))]
+    return {
+        'top_bowlers': result
+    }
 
 
 # API for top batsman yearwise
 def top_batsman_yearwise(year: int, top_k: int = 1):
     """
-    Returns the top batsman(s) of a given year.
-
+    Returns the top batsmen and their respective runs for a given year.
+    
     Args:
-        year (int): The year for which to find the top batsman(s).
-        top_k (int): The number of top batsman(s) to return. Default is 1.
-
+        year (int): The year for which the data is to be retrieved.
+        top_k (int, optional): The number of top batsmen to return. Defaults to 1.
+    
     Returns:
-        dict: A dictionary containing the top batsman(s) as keys and their corresponding runs as values.
+        dict: A dictionary containing the top batsmen and their respective runs.
     """
-
     temp_df = ball_match[ball_match['Date'].dt.year == year]
     top_batsman_group = temp_df.groupby('batter')['batsman_run']
-
+    
     batsmans = list(top_batsman_group.sum().sort_values(ascending=False).index[:top_k])
     runs = list(top_batsman_group.sum().sort_values(ascending=False).values[:top_k])
-
-    result = {batsmans[i]: str(runs[i]) for i in range(len(batsmans))}
-    return result
+    
+    result = [{batsmans[i]: str(runs[i])} for i in range(len(batsmans))]
+    return {
+        'top_batsmans': result
+    }

@@ -3,13 +3,10 @@ import analysis
 from analysis import df_ball,df_matches,ball_match
 
 st.set_page_config(page_title='IPL Analysis',layout='wide')
-st.title('IPL Data Analysis')
-st.markdown('This is demo APP for API services of IPL data analysis')
+st.title('Documentation for API services of IPL data analysis')
+st.markdown('Upto 2022 IPL Season')
 
-
-
-st.sidebar.title('IPL Data Analysis')
-option = st.sidebar.selectbox('Select the API',['Overall teams','Overall bowlers','Overall batsmans',
+option = st.selectbox('Select an API',['Overall teams','Overall bowlers','Overall batsmans',
                                                 'Team players','Team players played till date',
                                                 'Overall winning details','Teamwise winning details',
                                                 'Team vs Team winning details','Top bowlers Season-wise',

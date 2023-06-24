@@ -2,7 +2,11 @@
 
 I have created a documentation website for API services of IPL data analysis using `streamlit`.
 
-Link to the documentation website: https://kousik-sasmal-ipl-data-api-demo-streamlit-application-vf7a57.streamlit.app/
+Documentation website for API Services: https://kousik-sasmal-ipl-data-api-demo-streamlit-application-vf7a57.streamlit.app/
+-----------------------------------------------
 
-`API` services are created using `Flask`. And `Flask` website is deployed on https://www.pythonanywhere.com/.
 
+# Flask website of APIs
+
+`API` services are created using `Flask`. 
+Link of Flask website where APIs are deployed: http://kousiksasmal.pythonanywhere.com/

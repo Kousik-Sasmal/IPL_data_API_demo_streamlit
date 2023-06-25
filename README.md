@@ -1,4 +1,4 @@
-# Codes for `Documentation` website for API services of IPL data (till 2022) analysis
+# Documentation website for API services of IPL data (till 2022) analysis
 
 I have created a documentation website for API services of IPL data analysis using `streamlit`.
 

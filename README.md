@@ -10,4 +10,4 @@ Documentation page for API Services: https://kousik-sasmal-ipl-data-api-demo-str
 `API` services are created using `Flask`. GitHub Link for Flask codes: https://github.com/Kousik-Sasmal/Flask-API-making-from-IPL-data 
 
 
-Link to the Flask website where APIs are deployed: http://kousiksasmal.pythonanywhere.com/
+Link of the Flask website where APIs are deployed: http://kousiksasmal.pythonanywhere.com/

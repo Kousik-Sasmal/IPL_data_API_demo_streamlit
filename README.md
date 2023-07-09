@@ -6,7 +6,7 @@ Documentation page for API Services: https://kousik-sasmal-ipl-data-api-demo-str
 -----------------------------------------------
 
 
-# Flask website for API
+# Flask website for APIs
 `API` services are created using `Flask`. GitHub Link for Flask codes: https://github.com/Kousik-Sasmal/Flask-API-making-from-IPL-data 
 
 
